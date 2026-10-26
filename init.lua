@@ -2,7 +2,7 @@
 local component, computer, unicode = component, computer, unicode
 local function proxy(t) local a = component.list(t)() return a and component.proxy(a) end
 local gpu, fs = proxy("gpu"), component.proxy(computer.getBootAddress())
-gpu.bind(component.list("screen")())
+gpu.bind((component.list("screen")()))
 local W, H = gpu.maxResolution()
 gpu.setResolution(W, H)
 
